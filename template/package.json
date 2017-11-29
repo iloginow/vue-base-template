@@ -1,0 +1,197 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node dev-server",
+    {{#static}}
+    "static": "rimraf static && node static-site-generator",
+    {{/static}}
+    "icons": "svgexport icons.json",
+    "lint": "eslint --ext .js,.vue src",
+    "start": "cross-env NODE_ENV=production node server",
+    "build": "rimraf public && npm run build:client && npm run build:server",
+    "build:client": "cross-env NODE_ENV=production VUE_ENV=client webpack --progress --hide-modules",
+    "build:server": "cross-env NODE_ENV=production VUE_ENV=server webpack --progress --hide-modules"
+  },
+  "engines": {
+    "node": ">=8.0",
+    "npm": ">=5.0"
+  },
+  "dependencies": {
+    "cross-env": "^5.1.1",
+    "es6-promise": "^4.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "firebase": "^4.6.2",
+    "koa": "^2.4.1",
+    "koa-cache-lite": "^3.8.2",
+    "koa-compress": "^2.0.0",
+    "koa-favicon": "^2.0.0",
+    "koa-mount": "^3.0.0",
+    "koa-static": "^4.0.2",
+    "lru-cache": "^4.1.1",
+    "vue": "^2.5.8",
+    "vue-progressbar": "^0.7.3",
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.8",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-minify": "^0.2.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chokidar": "^1.7.0",
+    "compression-webpack-plugin": "^1.0.1",
+    {{#static}}
+    "crawler": "^1.1.1",
+    {{/static}}
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^3.14.0",
+    "file-loader": "^1.1.5",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.10.0",
+    "koa-webpack": "^1.0.0",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "postcss-advanced-variables": "^1.2.2",
+    "postcss-color-function": "^4.0.1",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-extend": "^1.0.5",
+    "postcss-flexbox": "^1.0.3",
+    "postcss-font-magician": "^2.1.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^2.1.2",
+    "postcss-normalize": "^4.0.0",
+    "rimraf": "^2.6.2",
+    "server-destroy": "^1.0.1",
+    "sw-precache-webpack-plugin": "^0.11.4",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^13.5.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.8",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.1",
+    "webpack-hot-middleware": "^2.20.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false,
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 2 versions",
+              "not ie <= 8"
+            ]
+          }
+        }
+      ],
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-runtime",
+      "syntax-dynamic-import"
+    ],
+    "env": {
+      "production": {
+        "presets": [
+          "minify"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "standard",
+      "plugin:vue/recommended"
+    ],
+    "settings": {
+      "import/resolver": "webpack"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-new": 0,
+      "import/no-unresolved": 2,
+      "vue/no-dupe-keys": 2,
+      "vue/no-template-key": 2,
+      "vue/no-shared-component-data": 2,
+      "vue/no-reserved-keys": 2,
+      "vue/no-async-in-computed-properties": 2,
+      "vue/no-duplicate-attributes": 2,
+      "vue/no-side-effects-in-computed-properties": 2,
+      "vue/require-default-prop": 2,
+      "vue/require-prop-types": 2,
+      "vue/attribute-hyphenation": 2,
+      "vue/this-in-template": 2,
+      "vue/mustache-interpolation-spacing": 2,
+      "vue/name-property-casing": 2,
+      "vue/no-multi-spaces": 2,
+      "vue/v-bind-style": 2,
+      "vue/v-on-style": 2,
+      "vue/html-self-closing": 2,
+      "vue/html-quotes": 2,
+      "vue/order-in-components": [
+        2,
+        {
+          "order": [
+            [
+              "name",
+              "delimiters",
+              "functional",
+              "model"
+            ],
+            [
+              "components",
+              "directives",
+              "filters"
+            ],
+            [
+              "parent",
+              "mixins",
+              "extends",
+              "provide",
+              "inject"
+            ],
+            "el",
+            "template",
+            "props",
+            "propsData",
+            "data",
+            "computed",
+            "watch",
+            "LIFECYCLE_HOOKS",
+            "methods",
+            "render",
+            "renderError"
+          ]
+        }
+      ]
+    }
+  }
+}

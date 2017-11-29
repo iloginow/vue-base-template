@@ -1,0 +1,34 @@
+[
+  {
+   "input": ["./src/images/logo.svg", "48:48"],
+   "output": [["./src/images/logo-48.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "120:120"],
+   "output": [["./src/images/logo-120.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "144:144"],
+   "output": [["./src/images/logo-144.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "152:152"],
+   "output": [["./src/images/logo-152.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "192:192"],
+   "output": [["./src/images/logo-192.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "256:256"],
+   "output": [["./src/images/logo-256.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "384:384"],
+   "output": [["./src/images/logo-384.png"]]
+  },
+  {
+   "input": ["./src/images/logo.svg", "512:512"],
+   "output": [["./src/images/logo-512.png"]]
+  }
+]

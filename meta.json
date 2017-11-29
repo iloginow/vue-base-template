@@ -1,0 +1,32 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "Project description",
+      "default": "A Vue.js project"
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    },
+    "license": {
+      "type": "string",
+      "label": "License",
+      "default": "MIT"
+    },
+    "static": {
+      "type": "confirm",
+      "message": "Need static site generator?",
+      "default": true
+    }
+  },
+  "filters": {
+    "static-site-generator.js": "static"
+  }
+}
