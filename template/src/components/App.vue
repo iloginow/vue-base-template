@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Page/>
     <vue-progress-bar/>
   </div>
 </template>
 
 <script>
+import Page from './Page.vue'
+
 export default {
   name: 'App',
+  components: {
+    Page
+  },
   mounted () {
     this.$Progress.finish()
   },

@@ -1,14 +1,15 @@
-const Hello = () => import('../components/Hello')
-const Gray = () => import('../components/Gray')
+const White = () => import('../components/White')
 const Blue = () => import('../components/Blue')
+const Gray = () => import('../components/Gray')
 
 export default {
   mode: 'history',
+  base: __dirname,
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'White',
+      component: White
     },
     {
       path: '/gray',
