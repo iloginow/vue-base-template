@@ -4,16 +4,16 @@
 
 /* ---------------- Local -------------- */
 
-import State from './state'
-import Actions from './actions'
-import Mutations from './mutations'
-import Getters from './getters'
+import state from './state'
+import actions from './actions'
+import mutations from './mutations'
+import getters from './getters'
 
 /* ===================================== */
 
 export default {
-  state: State,
-  actions: Actions,
-  mutations: Mutations,
-  getters: Getters
+  state,
+  actions,
+  mutations,
+  getters
 }
