@@ -63,11 +63,18 @@ Hopefully, you'll be able to see the app in your browser at http://localhost:300
     │   ├── components          # All single file components (including App.vue)
     │   ├── images              # Icons and images (create audio and/or video directories if needed)
     │   ├── routes              # Should deliver the config object for vue-router
-    │   ├── store               # Should deliver the config object for Vuex store
+    │   ├── store               # Should deliver module (or modules) for Vuex store
     |   ├── styles              # Config files for all PostCSS plugins (mixins, css-variables etc...) 
     |   ├── app.js              # Vue app factory
     |   ├── server.js           # Server entry
     |   ├── client.js           # Client entry
     |   ├── index.html          # Main html template
     |   └── manifest.json       # PWA related stuff
-    └── ...
+    ├── server.js               # Production server
+    ├── dev-server.js           # Development server
+    ├── generator.js            # Static site generator
+    ├── generator.config.js     # Specify routes that should be prerendered
+    ├── postcss.config.js       # Specify all PostCSS plugins, import stuff from src/styles
+    ├── webpack.config.js       # Unified webpack config (use env.variables to distinguish)
+    ├── icons.json              # Icon generator data file (defines input and output files)
+    └── package.json            # All npm needs to know about your app ;)
