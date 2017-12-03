@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development node dev-server",
     {{#static}}
-    "static": "rimraf static && node static-site-generator",
+    "generate": "rimraf static && node generator",
     {{/static}}
     "icons": "svgexport icons.json",
     "lint": "eslint --ext .js,.vue src",

@@ -21,7 +21,7 @@ const { createBundleRenderer } = require('vue-server-renderer')
 
 const vueSSRServerBundle = require('./public/vue-ssr-server-bundle.json')
 const vueSSRClientManifest = require('./public/vue-ssr-client-manifest.json')
-const config = require('./static.config.json')
+const config = require('./generator.config.json')
 
 /* ===================================== */
 
