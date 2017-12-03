@@ -57,12 +57,17 @@ Hopefully, you'll be able to see the app in your browser at http://localhost:300
 
 ## Structure
 
-    ├── public                  # Will be created by ```npm run build ```
-    ├── static                  # Will be created by ```npm run generate ```
-    ├── src                     # App source files
+    ├── public                  # Will be created by "npm run build"
+    ├── static                  # Will be created by "npm run generate"
+    ├── src                     # Source files
     │   ├── components          # All single file components (including App.vue)
-    │   ├── images              # Icons and images (audio and video directories can be created if needed)
-    │   ├── routes              # Should deliver the routes object for vue-router
-    │   ├── store               # Should deliver the store-module (or modules) object for Vuex store
-    |   ├── styles              # Contains config files for all PostCSS plugins (fonts, mixins, css-variables etc...) 
+    │   ├── images              # Icons and images (create audio and/or video directories if needed)
+    │   ├── routes              # Should deliver the config object for vue-router
+    │   ├── store               # Should deliver the config object for Vuex store
+    |   ├── styles              # Config files for all PostCSS plugins (mixins, css-variables etc...) 
+    |   ├── app.js              # Vue app factory
+    |   ├── server.js           # Server entry
+    |   ├── client.js           # Client entry
+    |   ├── index.html          # Main html template
+    |   └── manifest.json       # PWA related stuff
     └── ...
