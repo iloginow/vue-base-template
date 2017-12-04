@@ -9,8 +9,8 @@
     {{#static}}
     "generate": "rimraf static && node generator",
     {{/static}}
-    "icons": "svgexport icons.json",
     "lint": "eslint --ext .js,.vue src",
+    "icons": "svgexport icons.json",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf public && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production VUE_ENV=client webpack --progress --hide-modules",

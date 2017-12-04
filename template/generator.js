@@ -12,6 +12,7 @@ const { resolve } = require('path')
 
 const lruCache = require('lru-cache')
 const serverDestroy = require('server-destroy')
+const copyDir = require('copy-dir')
 const koaFavicon = require('koa-favicon')
 const Koa = require('koa')
 const Crawler = require('crawler')
@@ -21,16 +22,18 @@ const { createBundleRenderer } = require('vue-server-renderer')
 
 const vueSSRServerBundle = require('./public/vue-ssr-server-bundle.json')
 const vueSSRClientManifest = require('./public/vue-ssr-client-manifest.json')
-const config = require('./generator.config.json')
+const config = require('./generator.config.js')
 
 /* ===================================== */
 
 const paths = {
   template: resolve(__dirname, './src/index.html'),
+  images: resolve(__dirname, './src/images'),
   favicon: resolve(__dirname, './src/images/logo-48.png'),
   public: resolve(__dirname, './public'),
   static: resolve(__dirname, './static'),
-  staticPublic: resolve(__dirname, './static/public')
+  staticPublic: resolve(__dirname, './static/public'),
+  staticImages: resolve(__dirname, './static/images')
 }
 
 /* =====================================
@@ -76,7 +79,7 @@ function fixLinks (string) {
       },
       {
         from: /\/service-worker.js/g,
-        to: `${config.customRoot}/public/service-worker.js`
+        to: `${config.customRoot}/service-worker.js`
       },
       {
         from: /\/manifest.json/,
@@ -93,7 +96,7 @@ function fixLinks (string) {
 // Render HTML
 app.use(async (ctx, next) => {
   const context = {
-    title: '{{ name }}',
+    title: 'iLogiNow Vue Template',
     url: ctx.url
   }
   // And put it in a file when a route gets called
@@ -129,7 +132,7 @@ const crawler = new Crawler({
   jQuery: false
 })
 
-// Copy the public directory
+// Copy public directory
 fs.readdir(paths.public, (err, files) => {
   if (err) {
     console.error(err)
@@ -138,7 +141,25 @@ fs.readdir(paths.public, (err, files) => {
     fs.mkdirSync(paths.staticPublic)
     files.forEach(file => {
       let contents = fs.readFileSync(resolve(paths.public, file), 'utf-8')
-      fs.writeFileSync(resolve(paths.staticPublic, file), fixLinks(contents))
+      if (file === 'service-worker.js') {
+        fs.writeFileSync(resolve(paths.static, file), fixLinks(contents))
+      } else {
+        fs.writeFileSync(resolve(paths.staticPublic, file), fixLinks(contents))
+      }
+    })
+  }
+})
+
+// Copy images directory
+fs.readdir(paths.images, (err, files) => {
+  if (err) {
+    console.error(err)
+  } else {
+    createStaticDir()
+    fs.mkdirSync(paths.staticImages)
+    files.forEach(file => {
+      let contents = fs.readFileSync(resolve(paths.images, file))
+      fs.writeFileSync(resolve(paths.staticImages, file), contents)
     })
   }
 })

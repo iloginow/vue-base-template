@@ -9,17 +9,26 @@ export default {
     {
       path: '/',
       name: 'White',
-      component: White
+      component: White,
+      meta: {
+        title: 'White | Vue Template'
+      }
     },
     {
       path: '/gray',
       name: 'Gray',
-      component: Gray
+      component: Gray,
+      meta: {
+        title: 'Gray | Vue Template'
+      }
     },
     {
       path: '/blue',
       name: 'Blue',
-      component: Blue
+      component: Blue,
+      meta: {
+        title: 'Blue | Vue Template'
+      }
     }
   ]
 }

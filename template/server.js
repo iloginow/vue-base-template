@@ -86,7 +86,7 @@ app.use(koaStatic(paths.serviceWorker))
 // Deliver the html
 app.use(async ctx => {
   const context = {
-    title: '{{ name }}',
+    title: 'iLogiNow Vue Template',
     url: ctx.url
   }
 

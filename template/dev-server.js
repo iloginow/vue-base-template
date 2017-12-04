@@ -119,10 +119,7 @@ app.use(async ctx => {
     clientManifest
   })
 
-  const context = {
-    title: '{{ name }}',
-    url: ctx.url
-  }
+  const context = { url: ctx.url }
 
   renderer.renderToString(context, (error, html) => {
     try {

@@ -6,8 +6,8 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Vuex from 'vuex'
 import VueProgressBar from 'vue-progressbar'
+import Vuex from 'vuex'
 import { sync } from 'vuex-router-sync'
 
 /* ---------------- Local -------------- */
@@ -20,8 +20,8 @@ import progressBarSettings from './styles/progressbar'
 /* ===================================== */
 
 Vue.use(VueRouter)
-Vue.use(Vuex)
 Vue.use(VueProgressBar, progressBarSettings)
+Vue.use(Vuex)
 
 function createRouter () {
   return new VueRouter(routes)
@@ -43,5 +43,6 @@ export function createApp () {
     render: h => h(App)
   })
 
+  console.log(app)
   return { app, router, store }
 }

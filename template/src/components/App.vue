@@ -6,10 +6,13 @@
 </template>
 
 <script>
-import Page from './Page.vue'
+import Page from './Page'
 
 export default {
   name: 'App',
+  metaInfo: {
+    title: this.pageTitle
+  },
   components: {
     Page
   },
@@ -20,14 +23,14 @@ export default {
     this.$Progress.start()
     this.$router.beforeEach((to, from, next) => {
       if (to.meta.progress !== undefined) {
-        let meta = to.meta.progress
-        this.$Progress.parseMeta(meta)
+        this.$Progress.parseMeta(to.meta.progress)
       }
       this.$Progress.start()
       next()
     })
     this.$router.afterEach((to, from) => {
       this.$Progress.finish()
+      document.title = to.meta.title
     })
   }
 }
