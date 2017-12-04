@@ -1,12 +1,14 @@
 {
-  "name": "vue-dashboard-01",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "A universal dashboard template made with Vue.js",
-  "author": "Ilia Loginov <i.loginow@outlook.com>",
-  "license": "MIT",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "license": "{{ license }}",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node dev-server",
+    {{#static}}
     "generate": "rimraf static && node generator",
+    {{/static}}
     "lint": "eslint --ext .js,.vue src",
     "icons": "svgexport icons.json",
     "start": "cross-env NODE_ENV=production node server",
@@ -49,7 +51,9 @@
     "babel-preset-stage-2": "^6.24.1",
     "chokidar": "^1.7.0",
     "compression-webpack-plugin": "^1.0.1",
+    {{#static}}
     "crawler": "^1.1.1",
+    {{/static}}
     "css-loader": "^0.28.7",
     "eslint": "^4.12.1",
     "eslint-config-standard": "^10.2.1",

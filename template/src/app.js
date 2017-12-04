@@ -43,6 +43,5 @@ export function createApp () {
     render: h => h(App)
   })
 
-  console.log(app)
   return { app, router, store }
 }
