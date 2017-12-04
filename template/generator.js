@@ -12,7 +12,6 @@ const { resolve } = require('path')
 
 const lruCache = require('lru-cache')
 const serverDestroy = require('server-destroy')
-const copyDir = require('copy-dir')
 const koaFavicon = require('koa-favicon')
 const Koa = require('koa')
 const Crawler = require('crawler')
