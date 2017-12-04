@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ page }}</h2>
+    <h2>\{{ page }}</h2>
     <router-link to="/">Go to white page</router-link>
     <router-link to="blue">Go to blue page</router-link>
   </div>

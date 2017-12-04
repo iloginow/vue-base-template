@@ -3,8 +3,8 @@
     <img src="../images/logo.svg" alt="logo">
     <h1>{{ msg }}</h1>
     <router-view/>
-    <p>{{ vuex }}</p>
-    <div class="count">{{ count }}</div>
+    <p>\{{ vuex }}</p>
+    <div class="count">\{{ count }}</div>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
   </div>
