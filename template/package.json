@@ -1,14 +1,12 @@
 {
-  "name": "{{ name }}",
+  "name": "vue-dashboard-01",
   "version": "1.0.0",
-  "description": "{{ description }}",
-  "author": "{{ author }}",
-  "license": "{{ license }}",
+  "description": "A universal dashboard template made with Vue.js",
+  "author": "Ilia Loginov <i.loginow@outlook.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node dev-server",
-    {{#static}}
     "generate": "rimraf static && node generator",
-    {{/static}}
     "lint": "eslint --ext .js,.vue src",
     "icons": "svgexport icons.json",
     "start": "cross-env NODE_ENV=production node server",
@@ -24,7 +22,7 @@
     "cross-env": "^5.1.1",
     "es6-promise": "^4.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
-    "firebase": "^4.6.2",
+    "firebase": "^4.7.0",
     "koa": "^2.4.1",
     "koa-cache-lite": "^3.8.2",
     "koa-compress": "^2.0.0",
@@ -32,17 +30,17 @@
     "koa-mount": "^3.0.0",
     "koa-static": "^4.0.2",
     "lru-cache": "^4.1.1",
-    "vue": "^2.5.8",
+    "vue": "^2.5.9",
     "vue-progressbar": "^0.7.3",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.8",
+    "vue-server-renderer": "^2.5.9",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^7.2.1",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.2",
+    "babel-eslint": "^8.0.3",
     "babel-loader": "^7.1.2",
     "babel-minify": "^0.2.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -51,11 +49,9 @@
     "babel-preset-stage-2": "^6.24.1",
     "chokidar": "^1.7.0",
     "compression-webpack-plugin": "^1.0.1",
-    {{#static}}
     "crawler": "^1.1.1",
-    {{/static}}
     "css-loader": "^0.28.7",
-    "eslint": "^4.11.0",
+    "eslint": "^4.12.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-import-resolver-webpack": "^0.8.3",
@@ -87,10 +83,10 @@
     "url-loader": "^0.6.2",
     "vue-loader": "^13.5.0",
     "vue-style-loader": "^3.0.3",
-    "vue-template-compiler": "^2.5.8",
-    "webpack": "^3.8.1",
-    "webpack-dev-middleware": "^1.12.1",
-    "webpack-hot-middleware": "^2.20.0",
+    "vue-template-compiler": "^2.5.9",
+    "webpack": "^3.9.1",
+    "webpack-dev-middleware": "^1.12.2",
+    "webpack-hot-middleware": "^2.21.0",
     "webpack-node-externals": "^1.6.0"
   },
   "babel": {
