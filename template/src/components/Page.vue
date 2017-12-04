@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <img src="../images/logo.svg" alt="logo">
-    <h1>{{ msg }}</h1>
+    <h1>\{{ msg }}</h1>
     <router-view/>
     <p>\{{ vuex }}</p>
     <div class="count">\{{ count }}</div>
