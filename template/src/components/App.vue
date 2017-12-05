@@ -10,9 +10,6 @@ import Page from './Page'
 
 export default {
   name: 'App',
-  metaInfo: {
-    title: this.pageTitle
-  },
   components: {
     Page
   },
