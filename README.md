@@ -43,16 +43,16 @@ Hopefully, you'll be able to see the app in your browser at http://localhost:300
 
 | Command | Description |
 | --- | --- |
-| ``` npm run dev ``` | Start the development server. |
-| ``` npm run build ``` | Build the app for production. |
-| ``` npm run icons ``` | Generate png icons from an svg image based on icons.json setup. |
+| ``` npm run dev ``` | Start the development server |
+| ``` npm run build ``` | Build the app for production |
+| ``` npm run icons ``` | Generate png icons from an svg image based on icons.json setup |
 | ``` npm run lint ``` | Run [ESLint](https://github.com/eslint/eslint) to examine the /src directory |
 
 > Make sure you've run ``` npm run build ``` before you try one of the following:
 
 | Command | Description |
 | --- | --- |
-| ``` npm start ``` | Start the production server. |
+| ``` npm start ``` | Start the production server |
 | ``` npm run generate ``` | Build a static Vue app based on the routes from generator.config.js |
 
 ## Structure
