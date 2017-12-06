@@ -61,6 +61,8 @@ koaCacheLite.configure({
   '/gray': 3000,
   '/public': 10000,
   '/images': 10000
+}, {
+  debug: false
 })
 
 // Use compression and serve favicon

@@ -124,6 +124,7 @@ module.exports = function () {
   }
 
   if (isProd && isClient) {
+    config.entry = paths.clientEntry
     config.plugins.push(
       new SWPrecacheWebpackPlugin({
         cacheId: 'iloginow-vue',
