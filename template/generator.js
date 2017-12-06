@@ -85,6 +85,18 @@ function fixLinks (string) {
       {
         from: /\/manifest.json/,
         to: `${config.customRoot}/manifest.json`
+      },
+      {
+        from: /"start_url": "\/"/,
+        to: `"start_url": "/${config.customRoot}"`
+      },
+      {
+        from: /router.get("\/"/,
+        to: `router.get("/${config.customRoot}"`
+      },
+      {
+        from: /router.get(\/\\\//,
+        to: `router.get(/\\/${config.customRoot})`
       }
     ]
     linksToFix.forEach(pattern => {
@@ -168,7 +180,7 @@ fs.readdir(paths.images, (err, files) => {
 // Copy manifest.json
 createStaticDir()
 let manifest = fs.readFileSync(paths.manifest)
-fs.writeFileSync(paths.staticManifest, manifest)
+fs.writeFileSync(paths.staticManifest, fixLinks(manifest))
 
 // Listen for requests
 server.listen(port)
