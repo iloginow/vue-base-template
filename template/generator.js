@@ -29,10 +29,12 @@ const paths = {
   template: resolve(__dirname, './src/index.html'),
   images: resolve(__dirname, './src/images'),
   favicon: resolve(__dirname, './src/images/logo-48.png'),
+  manifest: resolve(__dirname, './src/manifest.json'),
   public: resolve(__dirname, './public'),
   static: resolve(__dirname, './static'),
   staticPublic: resolve(__dirname, './static/public'),
   staticImages: resolve(__dirname, './static/images')
+  staticManifest: resolve(__dirname, './static/manifest.json')
 }
 
 /* =====================================
@@ -162,6 +164,11 @@ fs.readdir(paths.images, (err, files) => {
     })
   }
 })
+
+// Copy manifest.json
+createStaticDir()
+let manifest = fs.readFileSync(paths.manifest)
+fs.writeFileSync(paths.staticManifest, manifest)
 
 // Listen for requests
 server.listen(port)

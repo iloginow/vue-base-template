@@ -127,7 +127,7 @@ module.exports = function () {
     config.entry = paths.clientEntry
     config.plugins.push(
       new SWPrecacheWebpackPlugin({
-        cacheId: 'iloginow-vue',
+        cacheId: '{{ name }}',
         filename: 'service-worker.js',
         minify: true,
         dontCacheBustUrlsMatching: /./,
