@@ -1,9 +1,16 @@
 # Vue Base Template
 
+<p align="center">
+  <a href="https://iloginow.github.io/vue-base-template/" target="_blank">
+    <img src="https://user-images.githubusercontent.com/23266023/33717520-46666248-db6b-11e7-884f-0656cba95678.gif"><br>Live Demo
+  </a>
+</p>
+
 ## Features
 
 * Server-side rendering with asynchronous data management
 * Prerendering with static-site-generator (suitable for static hosting like GitHub Pages)
+* Progressive Web App (hits 100 out of 100 Lighthouse audit score)
 * Based on Koa web framework instead of Express
 * Creates raster icons of all possible sizes from a single vector image
 * Vue-router and Vuex data store included
