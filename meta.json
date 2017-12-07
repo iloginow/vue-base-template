@@ -35,7 +35,6 @@
       "type": "string",
       "message": "Specify custom root directory (ex: /customdir)"
     }
-  }
   },
   "filters": {
     "static-site-generator.js": "static"
