@@ -24,7 +24,18 @@
       "type": "confirm",
       "message": "Need static site generator?",
       "default": true
+    },
+    "useCustomRoot": {
+      "type": "confirm",
+      "message": "Use a custom root directory?",
+      "default": false
+    },
+    "customRoot": {
+      "when": "useCustomRoot",
+      "type": "string",
+      "message": "Specify custom root directory (ex: /customdir)"
     }
+  }
   },
   "filters": {
     "static-site-generator.js": "static"
