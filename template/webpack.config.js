@@ -75,7 +75,9 @@ module.exports = function () {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            name: '[name].[ext]?[hash]'
+            name: '[name].[ext]',
+            publicPath: '/images/',
+            emitFile: false
           }
         }
       ]
