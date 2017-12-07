@@ -10,7 +10,7 @@
 
 * Server-side rendering with asynchronous data management
 * Prerendering with static-site-generator (suitable for static hosting like GitHub Pages)
-* Progressive Web App (hits 100 out of 100 Lighhouse audit score)
+* Progressive Web App (hits 100 out of 100 Lighthouse audit score)
 * Based on Koa web framework instead of Express
 * Creates raster icons of all possible sizes from a single vector image
 * Vue-router and Vuex data store included
