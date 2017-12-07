@@ -33,7 +33,7 @@ const paths = {
   public: resolve(__dirname, './public'),
   static: resolve(__dirname, './static'),
   staticPublic: resolve(__dirname, './static/public'),
-  staticImages: resolve(__dirname, './static/images')
+  staticImages: resolve(__dirname, './static/images'),
   staticManifest: resolve(__dirname, './static/manifest.json')
 }
 
