@@ -42,11 +42,6 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-img[alt="logo"] {
-  width: 200px;
-  height: 200px;
-}
-
 a {
   display: block;
 }
