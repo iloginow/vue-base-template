@@ -1,5 +1,5 @@
 module.exports = {
-  'customRoot': {{#customRoot}}'{{ customRoot }}'{{/customRoot}}{{#unless useCutomRoot}}false{{/unless}},
+  'customRoot': {{#useCustomRoot}}'{{ customRoot }}'{{/useCustomRoot}}{{#unless useCustomRoot}}false{{/unless}},
   'routesToPrerender': [
     '/',
     '/gray',
