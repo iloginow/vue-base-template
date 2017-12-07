@@ -98,9 +98,7 @@ app.use(koaMount('/service-worker.js', serveServiceWorker))
 
 // Deliver the html
 app.use(async ctx => {
-  const context = {
-    url: ctx.url
-  }
+  const context = { url: ctx.url }
 
   renderer.renderToString(context, (error, html) => {
     try {

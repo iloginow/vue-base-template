@@ -12,7 +12,6 @@ const { resolve } = require('path')
 
 const lruCache = require('lru-cache')
 const serverDestroy = require('server-destroy')
-const koaFavicon = require('koa-favicon')
 const Koa = require('koa')
 const Crawler = require('crawler')
 const { createBundleRenderer } = require('vue-server-renderer')
@@ -28,7 +27,6 @@ const config = require('./generator.config.js')
 const paths = {
   template: resolve(__dirname, './src/index.html'),
   images: resolve(__dirname, './src/images'),
-  favicon: resolve(__dirname, './src/images/logo-48.png'),
   manifest: resolve(__dirname, './src/manifest.json'),
   public: resolve(__dirname, './public'),
   static: resolve(__dirname, './static'),
@@ -62,9 +60,6 @@ const renderer = createBundleRenderer(vueSSRServerBundle, {
   template,
   clientManifest: vueSSRClientManifest
 })
-
-// Serve favicon
-app.use(koaFavicon(paths.favicon))
 
 // If we have a custom root, we need to fix the links
 function fixLinks (string) {
@@ -108,10 +103,7 @@ function fixLinks (string) {
 
 // Render HTML
 app.use(async (ctx, next) => {
-  const context = {
-    title: 'iLogiNow Vue Template',
-    url: ctx.url
-  }
+  const context = { url: ctx.url }
   // And put it in a file when a route gets called
   renderer.renderToString(context, (error, html) => {
     let filename = resolve(paths.static, `.${ctx.path}`, 'index.html')
