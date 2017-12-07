@@ -4,7 +4,7 @@ const Gray = () => import('../components/Gray')
 
 export default {
   mode: 'history',
-  base: {{#useCustomRoot}}'{{customRoot}}'{{/useCustomRoot}}{{#unless useCustomRoot}}__dirname{{/unless}},
+  base: {{#useCustomRoot}}'{{customRoot}}/'{{/useCustomRoot}}{{#unless useCustomRoot}}__dirname{{/unless}},
   routes: [
     {
       path: '/',
