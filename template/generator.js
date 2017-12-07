@@ -88,7 +88,7 @@ function fixLinks (string) {
       },
       {
         from: /"start_url": "\/"/,
-        to: `"start_url": "/${config.customRoot}"`
+        to: `"start_url": "${config.customRoot}"`
       },
       {
         from: /router.get\("\/"/,
