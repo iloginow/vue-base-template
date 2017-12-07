@@ -11,7 +11,7 @@ export default {
       name: 'White',
       component: White,
       meta: {
-        title: 'White | Vue Template'
+        title: 'Vue Template | White'
       }
     },
     {
@@ -19,7 +19,7 @@ export default {
       name: 'Gray',
       component: Gray,
       meta: {
-        title: 'Gray | Vue Template'
+        title: 'Vue Template | Gray'
       }
     },
     {
@@ -27,7 +27,7 @@ export default {
       name: 'Blue',
       component: Blue,
       meta: {
-        title: 'Blue | Vue Template'
+        title: 'Vue Template | Blue'
       }
     }
   ]
