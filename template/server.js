@@ -13,6 +13,7 @@ const lruCache = require('lru-cache')
 const koaFavicon = require('koa-favicon')
 const koaCompress = require('koa-compress')
 const koaCacheLite = require('koa-cache-lite')
+const koaSend = require('koa-send')
 const koaStatic = require('koa-static')
 const koaMount = require('koa-mount')
 const Koa = require('koa')
@@ -77,18 +78,27 @@ servePublic.use(koaStatic(paths.public))
 const serveImages = new Koa()
 serveImages.use(koaStatic(paths.images))
 
+// PWA manifest server
+const serveManifest = new Koa()
+serveManifest.use(async ctx => {
+  await koaSend(ctx, 'src/manifest.json')
+})
+
+// PWA service-worker server
+const serveServiceWorker = new Koa()
+serveServiceWorker.use(async ctx => {
+  await koaSend(ctx, 'public/service-worker.js')
+})
+
 // Mount static servers to the main app
 app.use(koaMount('/public', servePublic))
 app.use(koaMount('/images', serveImages))
-
-// Take care of the PWA related stuff
-app.use(koaStatic(paths.manifest))
-app.use(koaStatic(paths.serviceWorker))
+app.use(koaMount('/manifest.json', serveManifest))
+app.use(koaMount('/service-worker.js', serveServiceWorker))
 
 // Deliver the html
 app.use(async ctx => {
   const context = {
-    title: 'iLogiNow Vue Template',
     url: ctx.url
   }
 
