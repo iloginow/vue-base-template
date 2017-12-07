@@ -1,6 +1,6 @@
 <template>
   <div :class="classes">
-    <img src="../images/logo-192.png" alt="logo">
+    <img src="../images/logo-200.svg" alt="logo">
     <h1>\{{ msg }}</h1>
     <router-view/>
     <p>\{{ vuex }}</p>
