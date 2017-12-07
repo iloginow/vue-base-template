@@ -1,6 +1,6 @@
 {
   "name": "vue-base-template-demo",
-  "short_name": "vue-base-template-demo",
+  "short_name": "vue-template",
   "icons": [{
       "src": "/vue-base-template/images/logo-120.png",
       "sizes": "120x120",
