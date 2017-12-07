@@ -1,5 +1,13 @@
 # Vue Base Template
 
+<p align="center">
+  <a href="https://https://iloginow.github.io/vue-base-template/" target="_blank">
+    <img src="https://user-images.githubusercontent.com/23266023/33716666-13ea7cd0-db68-11e7-9a01-17bd97820bb9.gif">
+    <br>
+    Live Demo
+  </a>
+</p>
+
 ## Features
 
 * Server-side rendering with asynchronous data management
