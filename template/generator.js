@@ -92,11 +92,11 @@ function fixLinks (string) {
       },
       {
         from: /router.get\("\/"/,
-        to: `router.get("/${config.customRoot}"`
+        to: `router.get("${config.customRoot}"`
       },
       {
         from: /router.get\(\/\\\//,
-        to: `router.get(/\\/${config.customRoot})`
+        to: `router.get(/\\${config.customRoot}\\/)`
       }
     ]
     linksToFix.forEach(pattern => {
