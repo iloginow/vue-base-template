@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://https://iloginow.github.io/vue-base-template/" target="_blank">
-    <img src="https://user-images.githubusercontent.com/23266023/33716666-13ea7cd0-db68-11e7-9a01-17bd97820bb9.gif">
+    <img src="https://user-images.githubusercontent.com/23266023/33717089-ab6c57a8-db69-11e7-8576-8305b73cba2c.gif">
     <br>
     Live Demo
   </a>
