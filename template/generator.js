@@ -91,11 +91,11 @@ function fixLinks (string) {
         to: `"start_url": "/${config.customRoot}"`
       },
       {
-        from: /router.get("\/"/,
+        from: /router.get\("\/"/,
         to: `router.get("/${config.customRoot}"`
       },
       {
-        from: /router.get(\/\\\//,
+        from: /router.get\(\/\\\//,
         to: `router.get(/\\/${config.customRoot})`
       }
     ]
@@ -179,7 +179,7 @@ fs.readdir(paths.images, (err, files) => {
 
 // Copy manifest.json
 createStaticDir()
-let manifest = fs.readFileSync(paths.manifest)
+let manifest = fs.readFileSync(paths.manifest, 'utf-8')
 fs.writeFileSync(paths.staticManifest, fixLinks(manifest))
 
 // Listen for requests
