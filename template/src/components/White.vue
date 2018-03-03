@@ -11,7 +11,7 @@ export default {
   name: 'White',
   data () {
     return {
-      page: 'This a white page'
+      page: 'This is a white page'
     }
   }
 }
